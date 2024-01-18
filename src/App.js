@@ -20,11 +20,10 @@ function App() {
     <div className="App">
       {
         loading ? <h1>Loading...</h1> :
-          error ? <p>Error: { error }</p> :
-          users.map(user => (<>
-            <h5>{ user.name }</h5>
-            <p>{ user.email }</p>
-          </>))
+          error ? <p style={{ color: 'darkred', backgroundColor: 'black' }}>Error: { error }</p> :
+          users.map(user => (
+            <Card user={user} />
+          ))
       }
     </div>
   );
